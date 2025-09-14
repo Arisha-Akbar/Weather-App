@@ -11,16 +11,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 15px;
 }
 
 .card {
-  width: 90%;
+  width: 100%;
   max-width: 480px;
   color: #fff;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   border-radius: 25px;
-  padding: 40px 35px;
+  padding: 40px 30px;
   text-align: center;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -32,18 +33,18 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
+  gap: 10px;
 }
 
 .search input {
+  flex: 1;
   outline: none;
   border: none;
   background: rgba(255, 255, 255, 0.9);
   color: #333;
   height: 50px;
   border-radius: 30px;
-  flex: 1;
-  margin-right: 12px;
-  font-size: 18px;
+  font-size: 16px;
   padding: 0 18px;
   transition: all 0.3s ease;
 }
@@ -64,6 +65,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: 0.3s ease;
+  flex-shrink: 0;
 }
 
 .search button:hover {
@@ -76,18 +78,18 @@ body {
 }
 
 .weather-icon {
-  width: 160px;
+  width: 140px;
   margin: 15px 0;
 }
 
 .weather h1 {
-  font-size: 70px;
+  font-size: 60px;
   font-weight: 600;
   margin: 10px 0;
 }
 
 .weather h2 {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 400;
   margin-bottom: 20px;
   opacity: 0.9;
@@ -97,12 +99,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 35px;
+  margin-top: 30px;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .col {
   flex: 1;
+  min-width: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,12 +122,49 @@ body {
 }
 
 .col img {
-  width: 38px;
+  width: 35px;
   margin-right: 12px;
 }
 
 .humidity,
 .wind {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 25px 20px;
+  }
+
+  .search input {
+    font-size: 14px;
+    height: 45px;
+  }
+
+  .search button {
+    width: 45px;
+    height: 45px;
+  }
+
+  .weather-icon {
+    width: 120px;
+  }
+
+  .weather h1 {
+    font-size: 48px;
+  }
+
+  .weather h2 {
+    font-size: 22px;
+  }
+
+  .details {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .col {
+    width: 100%;
+  }
 }
